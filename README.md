@@ -13,6 +13,10 @@ Here is a basic example.
 $ uwu_rust "angry"
 angwy
 ```
+The program does not yet support files.
+
+# Todo
+- File support
 
 # License
 The program is licensed under [MIT](https://opensource.org/licenses/MIT).
