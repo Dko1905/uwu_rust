@@ -10,8 +10,8 @@ For example it replaces r & l with w, and na with nya.
 # Usage
 Here is a basic example.
 ```bash
-$ uwu_rust "angry"
-angwy
+$ uwu_rust "The train is late."
+De twain is wate.
 ```
 The program does not yet support files.
 
