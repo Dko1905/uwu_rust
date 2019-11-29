@@ -7,6 +7,8 @@ fn uwufy(input : &str) -> String{
 	temp = temp.replace("r", "w");
 	temp = temp.replace("ohh", "uh");
 
+	temp = temp.replace("ou", "uw");
+
 	temp = temp.replace("Th", "D");
 	temp = temp.replace("tH", "D");
 
