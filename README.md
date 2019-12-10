@@ -13,7 +13,12 @@ Here is a basic example.
 $ uwu_rust "The train is late."
 De twain is wate.
 ```
-The program does not yet support files.
+The program finally supports files.
+```bash
+$ echo "The train is late." > test.txt
+$ uwu_rust -f ./test.txt
+De twain is wate.
+```
 
 # Todo
 - File support

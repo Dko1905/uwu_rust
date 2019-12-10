@@ -1,4 +1,6 @@
 use std::env;
+use std::io::prelude::*;
+use std::fs::File;
 
 fn uwufy(input : &str) -> String{
 	let mut temp : String = input.replace("na", "nya");
@@ -29,6 +31,17 @@ fn main() {
 		println!("Usage uwu_rust \"hello world\"");
 		return;
 	};
-
-	println!("{}", uwufy(&args[1]));
+	if args[1] == "-f" {
+		if args.len() <= 2 {
+			println!("Not enough arguments for -f, try -h.");
+			return;
+		}
+		let mut file = File::open(&args[2]).expect("Failed to open file");
+		let mut contents = String::new();
+		file.read_to_string(&mut contents).expect("Failed to read from file");
+		println!("{}", uwufy(&contents));
+	}
+	else{
+		println!("{}", uwufy(&args[1]));
+	}
 }
