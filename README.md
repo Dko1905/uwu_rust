@@ -21,7 +21,6 @@ De twain is wate.
 ```
 
 # Todo
-- File support
 
 # License
 The program is licensed under [MIT](https://opensource.org/licenses/MIT).
