@@ -21,14 +21,45 @@ fn uwufy(input : &str) -> String{
 	return temp;
 }
 
+fn stdin_mode(){
+	let mut buffer = String::new();
+	let stdin = std::io::stdin();
+	let mut handle = stdin.lock();
+	
+	'mainloop: loop{
+		let result = handle.read_line(&mut buffer);
+
+		match result{
+			Ok(res) => {
+				if res == 0{
+					break 'mainloop;
+				}
+
+				print!("{}", uwufy(&buffer));
+			},
+			Err(err) => {
+				println!("Failed to read line {}", err);
+			}
+		}
+
+	}
+
+
+}
+
 fn main() {
 	let args: Vec<String> = env::args().collect();
 	if args.len() <= 1 {
-		println!("Not enough arguments, try -h.");
+		stdin_mode();
 		return;
 	}
 	if args[1] == "-h" {
-		println!("Usage uwu_rust \"hello world\"");
+		println!("You can use with files with the");
+		println!("\t-f option fx. uwu_rust -f ./test.txt");
+		println!("You can also use pipes with the \'|\' operator");
+		println!("fx. echo \"The train is late.\" | uwu_rust");
+		println!("And the last way to use it is just passing a string.");
+		println!("fx. uwu_rust \"The train is late.\"");
 		return;
 	};
 	if args[1] == "-f" {

@@ -19,8 +19,11 @@ $ echo "The train is late." > test.txt
 $ uwu_rust -f ./test.txt
 De twain is wate.
 ```
-
-# Todo
+The program does also support piping
+```bash
+$ echo "The train is late." | uwu_rust
+De twain is wate.
+```
 
 # License
 The program is licensed under [MIT](https://opensource.org/licenses/MIT).
